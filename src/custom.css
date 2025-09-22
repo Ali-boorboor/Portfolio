@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "font";
+  src: url("/font/persian-font.ttf") format("truetype");
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50 font-[font];
+  }
+  body {
+    @apply bg-background text-foreground selection:text-primary-foreground selection:bg-primary;
+  }
+}
+
+@layer utilities {
+  .section-style {
+    @apply bg-background shadow-lg border-y-2 border-primary transform-gpu will-change-transform;
+    @apply px-4 py-8 md:py-20 my-32 md:my-96;
+  }
+}
