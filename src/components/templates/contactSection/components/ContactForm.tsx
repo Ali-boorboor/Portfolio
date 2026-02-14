@@ -35,7 +35,7 @@ const ContactForm = () => {
           className="flex flex-col gap-6 container m-auto"
           onSubmit={form.handleSubmit(onSubmit)}
         >
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 items-baseline">
             {inputFields.map((input) => (
               <FormInputField
                 className={input.className}
