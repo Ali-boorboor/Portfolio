@@ -42,7 +42,7 @@ const Layout = () => {
     <>
       <Menu />
 
-      <div id="smooth-wrapper" ref={wrapperRef}>
+      <main id="smooth-wrapper" ref={wrapperRef}>
         <div id="smooth-content" ref={contentRef}>
           <IntroSection />
           <AboutMeSection />
@@ -50,7 +50,7 @@ const Layout = () => {
           <PortfolioSection />
           <ContactSection />
         </div>
-      </div>
+      </main>
 
       <DownloadResumeButton isFixed />
 
