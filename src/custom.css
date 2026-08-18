@@ -1,6 +1,7 @@
 @font-face {
   font-family: "font";
-  src: url("/font/persian-font.ttf") format("truetype");
+  font-display: swap;
+  src: url("/font/persian-font.woff2") format("woff2");
 }
 
 @layer base {
