@@ -8,7 +8,6 @@ const DownloadResumeButton = ({ isFixed }: DownloadResumeButtonProps) => {
   return (
     <Button
       asChild
-      aria-label="download-resume-btn"
       className={cn(
         "bg-accent text-accent-foreground",
         isFixed && "hidden md:inline-flex fixed bottom-4 left-4",
@@ -16,7 +15,7 @@ const DownloadResumeButton = ({ isFixed }: DownloadResumeButtonProps) => {
     >
       <a href="#" download>
         <span className="sr-only">Download resume</span>
-        <Download />
+        <Download aria-hidden />
         دانلود رزومه
       </a>
     </Button>

@@ -12,7 +12,12 @@ const ContactButtons = () => {
           size="icon"
           asChild
         >
-          <a target="_blank" href={contact.linkTo} aria-label="contact-link">
+          <a
+            aria-label={contact.title}
+            rel="noopener noreferrer"
+            href={contact.linkTo}
+            target="_blank"
+          >
             {contact.children}
           </a>
         </Button>

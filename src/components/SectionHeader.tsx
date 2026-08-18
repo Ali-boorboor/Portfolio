@@ -34,7 +34,10 @@ const SectionHeader = ({ title }: SectionHeaderProps) => {
         {title}
       </h2>
       <div className="relative w-full h-1 bg-primary rounded-full">
-        <span className="absolute inset-0 m-auto h-2.5 w-6 bg-foreground rounded-full"></span>
+        <span
+          className="absolute inset-0 m-auto h-2.5 w-6 bg-foreground rounded-full"
+          aria-hidden
+        ></span>
       </div>
     </div>
   );

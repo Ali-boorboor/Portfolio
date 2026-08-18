@@ -1,9 +1,9 @@
-import * as sheet from "@/components/ui/sheet";
-import * as navigation from "@/components/ui/navigation-menu";
-import useMenuItemsAnimation from "@/components/templates/menu/hooks/useMenuItemsAnimation";
 import MenuListItems from "@/components/templates/menu/components/MenuListItems";
+import useMenuItemsAnimation from "@/components/templates/menu/hooks/useMenuItemsAnimation";
 import ThemeModeToggle from "@/components/ThemeModeToggle";
 import { Button } from "@/components/ui/button";
+import * as navigation from "@/components/ui/navigation-menu";
+import * as sheet from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useCallback } from "react";
 
@@ -12,9 +12,11 @@ const MobileMenu = () => {
 
   const handleMenuOpenChange = useCallback(
     (isMenuOpen: boolean) => {
-      isMenuOpen && requestAnimationFrame(animateListItems);
+      if (isMenuOpen) {
+        requestAnimationFrame(animateListItems);
+      }
     },
-    [animateListItems]
+    [animateListItems],
   );
 
   return (
@@ -28,14 +30,15 @@ const MobileMenu = () => {
         className="opacity-100 pointer-events-auto relative md:opacity-0 md:pointer-events-none md:absolute"
         asChild
       >
-        <Button variant="outline" size="icon">
-          <Menu />
+        <Button variant="outline" size="icon" aria-label="باز کردن منو">
+          <Menu aria-hidden />
         </Button>
       </sheet.SheetTrigger>
 
       <sheet.SheetContent side="left">
         <navigation.NavigationMenu
           className="max-w-full w-full py-20 items-start gap-4 transition-all duration-300 ease-linear"
+          aria-label="ناوبری اصلی"
           ref={menuNavRef}
         >
           <sheet.SheetClose asChild>
