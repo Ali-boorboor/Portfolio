@@ -13,8 +13,9 @@ interface SkillData extends SkillCardProps {
 
 type SkillCategorySectionProps = { title: string; skills: SkillData[] };
 
-type SkillCategory = "frontend" | "backend" | "tools";
+type SkillCategory = "frontend" | "tools";
 
 type SkillsData = Record<SkillCategory, SkillData[]>;
 
 export type { SkillCardProps, SkillCategorySectionProps, SkillsData };
+

@@ -13,7 +13,6 @@ const IntroSection = () => {
         className="text-xl md:text-4xl font-semibold space-y-2"
         ref={containerRef}
       >
-        <p className="text-sm md:text-2xl mb-6 text-foreground">خوش آمدید</p>
         <h1 className="tracking-widest font-bold">
           سلام، من{" "}
           <span className="text-primary-foreground relative after:absolute after:inset-0 after:-z-10 after:w-full after:h-full after:bg-primary after:-skew-1 md:after:-skew-2 after:scale-105 after:rounded-md after:border">
@@ -23,8 +22,8 @@ const IntroSection = () => {
         </h1>
         <span> برنامه نویس </span>
         <TypeWriterEffect
-          typeTexts={["وب", "فرانت‌‌اند", "بک‌اند"]}
-          defaultText="وب"
+          typeTexts={["فرانت‌‌اند", "وب"]}
+          defaultText="فرانت‌‌اند"
         />
       </div>
     </div>

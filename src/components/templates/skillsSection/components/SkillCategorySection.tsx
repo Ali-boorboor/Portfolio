@@ -1,7 +1,7 @@
 import SkillCard from "@/components/templates/skillsSection/components/SkillCard";
-import useFadeInOnScrollAnimation from "@/hooks/useFadeInOnScrollAnimation";
-import { Separator } from "@/components/ui/separator";
 import type { SkillCategorySectionProps } from "@/components/templates/skillsSection/types";
+import { Separator } from "@/components/ui/separator";
+import useFadeInOnScrollAnimation from "@/hooks/useFadeInOnScrollAnimation";
 
 const SkillCategorySection = ({ title, skills }: SkillCategorySectionProps) => {
   const { animatedSectionRef } = useFadeInOnScrollAnimation({});
@@ -14,7 +14,7 @@ const SkillCategorySection = ({ title, skills }: SkillCategorySectionProps) => {
         {title}
       </p>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4 container m-auto">
+      <div className="flex flex-row-reverse flex-wrap [&_div]:flex-1 gap-4 container m-auto">
         {skills.map((data) => (
           <SkillCard key={data.id} {...data} />
         ))}

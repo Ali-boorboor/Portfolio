@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
+import type { SkillCardProps } from "@/components/templates/skillsSection/types";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import type { SkillCardProps } from "@/components/templates/skillsSection/types";
+import { cn } from "@/lib/utils";
 
 const SkillCard = ({
   name,
@@ -12,16 +12,26 @@ const SkillCard = ({
   borderColor = "border-border",
 }: SkillCardProps) => {
   return (
-    <Card className={cn("border-2 shadow-lg", borderColor)}>
+    <Card
+      className={cn(
+        "border-2 shadow-lg min-w-60 drop-shadow-xs drop-shadow-muted-foreground",
+        borderColor,
+      )}
+    >
       <CardContent className="flex flex-col justify-center items-center gap-4">
-        <svg className={cn("w-10 md:w-20 h-10 md:h-20", iconColor)}>
+        <svg
+          className={cn(
+            "w-10 md:w-20 h-10 md:h-20 drop-shadow-xs drop-shadow-muted-foreground",
+            iconColor,
+          )}
+        >
           <use href={iconHref}></use>
         </svg>
         <Badge
           className={cn(
-            "font-semibold text-sm md:text-lg capitalize",
+            "font-semibold text-sm md:text-lg capitalize drop-shadow-xs drop-shadow-muted-foreground",
             textColor,
-            textBg
+            textBg,
           )}
         >
           {name}

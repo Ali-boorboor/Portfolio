@@ -1,5 +1,5 @@
-import useAboutMeAnimation from "@/components/templates/aboutMeSection/hooks/useAboutMeAnimation";
 import DownloadResumeButton from "@/components/DownloadResumeButton";
+import useAboutMeAnimation from "@/components/templates/aboutMeSection/hooks/useAboutMeAnimation";
 import TypeWriterEffect from "@/features/typewriterEffect";
 
 const AboutMeSection = () => {
@@ -17,8 +17,8 @@ const AboutMeSection = () => {
         <p className="text-base md:text-2xl font-semibold text-accent-foreground">
           <span>برنامه نویس </span>
           <TypeWriterEffect
-            typeTexts={["وب", "فرانت‌‌اند", "بک‌اند"]}
-            defaultText="وب"
+            typeTexts={["فرانت‌‌اند", "وب"]}
+            defaultText="فرانت‌‌اند"
           />
         </p>
 
@@ -27,10 +27,16 @@ const AboutMeSection = () => {
         </h2>
 
         <p className="text-sm md:text-base font-semibold my-8 leading-10 text-accent-foreground">
-          من علی هستم، یه برنامه‌نویس وب با دو سال تجربه در توسعه JavaScript.
-          تخصص من کار با فریمورک‌های قدرتمند React.js و Next.js هست و تا امروز
-          وب‌سایت‌های مختلفی با چالش‌های متنوع ساخته‌ام و همیشه آماده‌ی مواجهه
-          با چالش‌های جدید و ارتقای مهارت هام هستم!
+          من یک توسعه‌دهنده وب با تمرکز جدی بر یادگیری عمیق و ساخت تجربه‌های
+          مدرن و کاربردی در وب هستم.
+          <br /> مسیرم را از HTML و CSS شروع کردم و با React و Next.js به سمت
+          توسعه حرفه‌ای فرانت‌اند پیش رفته‌ام.
+          <br /> در کنار یادگیری، روی پروژه‌های واقعی کار می‌کنم و به معماری،
+          تجربه کاربری، سئو، دسترس‌پذیری و کیفیت کد اهمیت زیادی می‌دهم.
+          <br /> ذهنیت من بیشتر از «فقط کار کردن»، بر درک چرایی هر تصمیم فنی و
+          دنبال کردن بهترین روش‌های توسعه استوار است.
+          <br /> هدفم ساخت محصولاتی تمیز، سریع و مقیاس‌پذیر است؛ محصولاتی که هم
+          از نظر فنی قدرتمند باشند و هم تجربه‌ای حرفه‌ای برای کاربر ایجاد کنند.
         </p>
 
         <DownloadResumeButton />
