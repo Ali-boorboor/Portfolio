@@ -1,15 +1,15 @@
-import gsap from "gsap";
 import useThemeStore from "@/stores/useThemeStore";
-import { useEffect, useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
 import type { Theme } from "@/types";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
 
 const getThemeBasedImage = (theme: Theme) => {
   if (theme === "dark") {
-    return "linear-gradient(rgba(255,255,255,0.04), rgba(255,255,255,0.1)), url('/particles-images/dark-mountain.png')";
+    return "linear-gradient(rgba(255,255,255,0.04), rgba(255,255,255,0.1)), url('/particles-images/dark-mountain.webp')";
   }
 
-  return "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('/particles-images/light-mountain.png')";
+  return "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('/particles-images/light-mountain.webp')";
 };
 
 const useBackgroundImageTransition = () => {
@@ -43,7 +43,7 @@ const useBackgroundImageTransition = () => {
         },
       });
     },
-    { dependencies: [theme] }
+    { dependencies: [theme] },
   );
 
   return { overlayRef, backgroundImage };
