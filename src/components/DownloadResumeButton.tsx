@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Download } from "lucide-react";
 
 type DownloadResumeButtonProps = { isFixed?: boolean };
 
@@ -11,10 +11,10 @@ const DownloadResumeButton = ({ isFixed }: DownloadResumeButtonProps) => {
       aria-label="download-resume-btn"
       className={cn(
         "bg-accent text-accent-foreground",
-        isFixed && "hidden md:inline-flex fixed bottom-4 left-4"
+        isFixed && "hidden md:inline-flex fixed bottom-4 left-4",
       )}
     >
-      <a href="#">
+      <a href="#" download>
         <span className="sr-only">Download resume</span>
         <Download />
         دانلود رزومه

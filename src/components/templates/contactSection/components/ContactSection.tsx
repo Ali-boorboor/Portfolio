@@ -2,12 +2,12 @@ import ContactButtons from "@/components/templates/contactSection/components/Con
 
 const ContactSection = () => {
   return (
-    <div
+    <section
       className="section-style !p-4 md:!p-8 !border-b-0 flex flex-col justify-center items-center"
       id="contact-section"
     >
       <ContactButtons />
-    </div>
+    </section>
   );
 };
 

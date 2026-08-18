@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-three-chi-l541bxyevl.vercel.app/sitemap.xml

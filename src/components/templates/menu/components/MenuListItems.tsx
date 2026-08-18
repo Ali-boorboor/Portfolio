@@ -1,5 +1,5 @@
-import * as navigation from "@/components/ui/navigation-menu";
 import listItems from "@/components/templates/menu/data/listItems";
+import * as navigation from "@/components/ui/navigation-menu";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { memo, useCallback } from "react";
 

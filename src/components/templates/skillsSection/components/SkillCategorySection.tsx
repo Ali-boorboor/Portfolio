@@ -10,9 +10,9 @@ const SkillCategorySection = ({ title, skills }: SkillCategorySectionProps) => {
     <div className="flex flex-col w-full" ref={animatedSectionRef}>
       <Separator orientation="horizontal" className="!h-0.5 my-4" />
 
-      <p className="text-sm md:text-lg font-semibold capitalize bg-secondary text-secondary-foreground border-2 border-foreground p-1 rounded-md mb-4 m-auto">
+      <h3 className="text-sm md:text-lg font-semibold capitalize bg-secondary text-secondary-foreground border-2 border-foreground p-1 rounded-md mb-4 m-auto">
         {title}
-      </p>
+      </h3>
 
       <div className="flex flex-row-reverse flex-wrap [&_div]:flex-1 gap-4 container m-auto">
         {skills.map((data) => (

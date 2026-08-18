@@ -6,7 +6,7 @@ const slidesData: SlidesData = [
     title: "1 پروژه",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus voluptate esse, id libero sed eveniet pariatur veritatis dolorum nisi soluta dolor laboriosam dolores error mollitia sit quaerat. Eaque, tempora culpa!",
-    image: "bg-[url('/particles-images/dark-mountain.png')]",
+    image: "bg-[url('/particles-images/dark-mountain.webp')]",
     href: "#",
     techs: [
       { id: 1, name: "react", backgroundColor: "bg-cyan-500" },
@@ -20,7 +20,7 @@ const slidesData: SlidesData = [
     title: "2 پروژه",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus voluptate esse, id libero sed eveniet pariatur veritatis dolorum nisi soluta dolor laboriosam dolores error mollitia sit quaerat. Eaque, tempora culpa!",
-    image: "bg-[url('/particles-images/dark-mountain.png')]",
+    image: "bg-[url('/particles-images/dark-mountain.webp')]",
     href: "#",
     techs: [
       { id: 1, name: "react", backgroundColor: "bg-cyan-500" },
@@ -32,7 +32,7 @@ const slidesData: SlidesData = [
     title: "3 پروژه",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus voluptate esse, id libero sed eveniet pariatur veritatis dolorum nisi soluta dolor laboriosam dolores error mollitia sit quaerat. Eaque, tempora culpa!",
-    image: "bg-[url('/particles-images/dark-mountain.png')]",
+    image: "bg-[url('/particles-images/dark-mountain.webp')]",
     href: "#",
     techs: [{ id: 4, name: "typescript", backgroundColor: "bg-blue-600" }],
   },
@@ -41,7 +41,7 @@ const slidesData: SlidesData = [
     title: "4 پروژه",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus voluptate esse, id libero sed eveniet pariatur veritatis dolorum nisi soluta dolor laboriosam dolores error mollitia sit quaerat. Eaque, tempora culpa!",
-    image: "bg-[url('/particles-images/dark-mountain.png')]",
+    image: "bg-[url('/particles-images/dark-mountain.webp')]",
     href: "#",
     techs: [{ id: 4, name: "mui", backgroundColor: "bg-blue-700" }],
   },

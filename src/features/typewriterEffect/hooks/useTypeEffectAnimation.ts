@@ -1,7 +1,6 @@
-import gsap from "gsap";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
 import type { UseTypeEffectAnimation } from "@/features/typewriterEffect/types";
+import { gsap, useGSAP } from "@/lib/gsap";
+import { useRef } from "react";
 
 const useTypeEffectAnimation = ({
   typeTexts,

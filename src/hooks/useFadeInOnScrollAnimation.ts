@@ -1,13 +1,12 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
 
 type useFadeInOnScrollAnimationProps = {
   y?: number;
   duration?: number;
   delay?: number;
   start?: string;
-  toggleActions?: string;
 };
 
 const useFadeInOnScrollAnimation = ({
@@ -15,7 +14,6 @@ const useFadeInOnScrollAnimation = ({
   duration = 0.8,
   delay = 0,
   start = "top 80%",
-  toggleActions = "play reverse play reverse",
 }: useFadeInOnScrollAnimationProps) => {
   const animatedSectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -29,7 +27,6 @@ const useFadeInOnScrollAnimation = ({
       scrollTrigger: {
         trigger: animatedSectionRef.current,
         start,
-        toggleActions,
       },
     });
   }, []);

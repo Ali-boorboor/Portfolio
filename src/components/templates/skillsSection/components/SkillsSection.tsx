@@ -4,7 +4,7 @@ import skillsData from "@/components/templates/skillsSection/data/skillsData";
 
 const SkillsSection = () => {
   return (
-    <div className="section-style" id="skills-section">
+    <section className="section-style" id="skills-section">
       <div className="flex flex-col justify-center items-center">
         <SectionHeader title="مهارت ها" />
 
@@ -12,7 +12,7 @@ const SkillsSection = () => {
 
         <SkillCategorySection title="ابزارها" skills={skillsData.tools} />
       </div>
-    </div>
+    </section>
   );
 };
 

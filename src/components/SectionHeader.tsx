@@ -1,7 +1,6 @@
-import gsap from "gsap";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
+import { gsap, useGSAP } from "@/lib/gsap";
 import { SplitText } from "gsap/SplitText";
+import { useRef } from "react";
 
 type SectionHeaderProps = { title: string };
 
@@ -24,7 +23,6 @@ const SectionHeader = ({ title }: SectionHeaderProps) => {
         scrollTrigger: {
           trigger: splitTextRef.current,
           start: "top 80%",
-          toggleActions: "play reverse play reverse",
         },
       });
     });
@@ -32,9 +30,9 @@ const SectionHeader = ({ title }: SectionHeaderProps) => {
 
   return (
     <div className="flex flex-col gap-2 mb-10 md:mb-20">
-      <h3 className="text-xl md:text-3xl font-bold" ref={splitTextRef}>
+      <h2 className="text-xl md:text-3xl font-bold" ref={splitTextRef}>
         {title}
-      </h3>
+      </h2>
       <div className="relative w-full h-1 bg-primary rounded-full">
         <span className="absolute inset-0 m-auto h-2.5 w-6 bg-foreground rounded-full"></span>
       </div>

@@ -6,7 +6,7 @@ const AboutMeSection = () => {
   const { splitTextRef } = useAboutMeAnimation();
 
   return (
-    <div
+    <section
       className="flex flex-col justify-center items-center h-svh section-style"
       id="about-section"
     >
@@ -41,7 +41,7 @@ const AboutMeSection = () => {
 
         <DownloadResumeButton />
       </div>
-    </div>
+    </section>
   );
 };
 

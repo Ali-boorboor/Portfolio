@@ -1,7 +1,5 @@
-import gsap from "gsap";
+import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/SplitText";
 
 const useAboutMeAnimation = () => {
   const splitTextRef = useRef(null);
@@ -22,7 +20,6 @@ const useAboutMeAnimation = () => {
         scrollTrigger: {
           trigger: splitTextRef.current,
           start: "top 80%",
-          toggleActions: "play reverse play reverse",
         },
       });
     });

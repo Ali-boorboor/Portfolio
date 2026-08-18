@@ -1,7 +1,6 @@
+import { gsap, useGSAP } from "@/lib/gsap";
 import useThemeStore from "@/stores/useThemeStore";
 import type { Theme } from "@/types";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 
 const getThemeBasedImage = (theme: Theme) => {

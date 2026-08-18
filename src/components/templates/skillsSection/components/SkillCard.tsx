@@ -20,6 +20,8 @@ const SkillCard = ({
     >
       <CardContent className="flex flex-col justify-center items-center gap-4">
         <svg
+          aria-hidden="true"
+          focusable="false"
           className={cn(
             "w-10 md:w-20 h-10 md:h-20 drop-shadow-xs drop-shadow-muted-foreground",
             iconColor,

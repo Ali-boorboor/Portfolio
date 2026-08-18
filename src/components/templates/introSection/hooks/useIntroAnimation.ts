@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import { gsap } from "@/lib/gsap";
 import useThemeStore from "@/stores/useThemeStore";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -24,7 +24,7 @@ const useIntroAnimation = () => {
         ease: "power2.out",
       });
     },
-    { dependencies: [theme], revertOnUpdate: true }
+    { dependencies: [theme], revertOnUpdate: true },
   );
 
   return { containerRef };

@@ -5,7 +5,7 @@ const IntroSection = () => {
   const { containerRef } = useIntroAnimation();
 
   return (
-    <div
+    <section
       className="flex justify-center items-center h-svh container m-auto transform-gpu will-change-transform"
       id="intro-section"
     >
@@ -26,7 +26,7 @@ const IntroSection = () => {
           defaultText="فرانت‌‌اند"
         />
       </div>
-    </div>
+    </section>
   );
 };
 
