@@ -1,69 +1,486 @@
-# React + TypeScript + Vite
+# 🧑‍💻 Ali BoorBoor — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![total commits](https://img.shields.io/github/commit-activity/t/Ali-boorboor/Portfolio)
+![createdAt](https://img.shields.io/github/created-at/ali-boorboor/Portfolio?color=red)
+![root files and folders count](https://img.shields.io/github/directory-file-count/ali-boorboor/Portfolio?color=blue)
+![version tag](https://img.shields.io/github/v/tag/ali-boorboor/Portfolio?color=red)
+![Vercel](https://img.shields.io/badge/deployed-Vercel-black?logo=vercel)
 
-Currently, two official plugins are available:
+> A modern, animated, RTL developer portfolio built with React, TypeScript, Vite, Tailwind CSS, GSAP, Zustand, and reusable UI primitives.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ali BoorBoor's portfolio is a single-page personal website designed to present a developer profile through a focused, interactive experience. It combines a Persian-first RTL layout with responsive navigation, theme persistence, smooth scrolling, scroll-triggered motion, particle effects, a skills showcase, project slider and resume access.
 
-## Expanding the ESLint configuration
+The project is intentionally organized around reusable components and feature-oriented modules, making the portfolio easier to maintain, extend, and adapt as the content grows.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Demo
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Live Application
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+**[Ali BoorBoor — Live Portfolio](https://portfolio-three-chi-l541bxyevl.vercel.app/)**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Explore the deployed portfolio and its main sections:
+
+- 🏠 Intro / Hero
+- 👨‍💻 About Me
+- 🧠 Skills
+- 🧩 Portfolio / Projects
+- 🌓 Light & Dark Theme
+- 📄 Resume Download
+
+The repository is built as a client-side React application and is deployed as a Vite-powered site on Vercel.
+
+## 🛠️ Technologies
+
+### Frontend
+
+| Technology         | Purpose                                         |
+| ------------------ | ----------------------------------------------- |
+| **React 19**       | Component-based UI development                  |
+| **TypeScript 5.8** | Static typing and safer application code        |
+| **Vite 7**         | Development server and production bundling      |
+| **Tailwind CSS 4** | Utility-first styling and responsive layouts    |
+| **GSAP 3**         | Advanced animation and scroll interactions      |
+| **GSAP React**     | React integration for GSAP lifecycle management |
+| **Lucide React**   | Interface icons                                 |
+| **Embla Carousel** | Project/portfolio carousel behavior             |
+| **tsParticles**    | Animated particle background                    |
+
+### UI & Component System
+
+| Technology                   | Purpose                                     |
+| ---------------------------- | ------------------------------------------- |
+| **Radix UI**                 | Accessible low-level UI primitives          |
+| **Class Variance Authority** | Variant-driven component styling            |
+| **Tailwind Merge**           | Safe Tailwind class composition             |
+| **tw-animate-css**           | Animation utilities used alongside Tailwind |
+| **clsx**                     | Conditional class names                     |
+
+### State Management
+
+| Technology  | Purpose                            |
+| ----------- | ---------------------------------- |
+| **Zustand** | Global theme state and persistence |
+
+### Tooling
+
+| Technology            | Purpose                                                       |
+| --------------------- | ------------------------------------------------------------- |
+| **ESLint 9**          | Code quality and linting                                      |
+| **typescript-eslint** | TypeScript-aware ESLint rules                                 |
+| **SWC**               | Fast React transforms through Vite                            |
+| **npm / Bun**         | Package management / lockfile options used around the project |
+
+## ✨ Features
+
+### 🏠 Single-Page Portfolio Experience
+
+The application is composed as one continuous portfolio page instead of a multi-route site. The main layout renders the following sections in order:
+
+```text
+Intro → About → Skills → Portfolio → Contact
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This keeps the experience focused while allowing the fixed menu to jump between sections.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🌓 Persistent Theme Switching
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The portfolio supports **light** and **dark** modes.
+
+Theme state is managed with Zustand and persisted using the browser's local storage, so the selected theme survives page reloads.
+
+```text
+src/stores/useThemeStore.ts
+src/hooks/useTheme.ts
 ```
+
+The application initializes with a dark theme and applies the selected theme to the document root.
+
+### 🎞️ Smooth Scrolling & Motion
+
+GSAP is used as one of the core interaction layers of the site.
+
+The project registers:
+
+- `ScrollTrigger`
+- `ScrollSmoother`
+- `TextPlugin`
+- `SplitText`
+- `useGSAP`
+
+The main layout creates a smooth scrolling container with normalized scrolling, while reusable animation hooks provide scroll-based entrance effects for individual sections.
+
+The smooth-scroll setup also checks `prefers-reduced-motion` and skips the smoother when the user requests reduced motion.
+
+### ✍️ Typewriter Effect
+
+The intro area contains a dedicated feature module for typewriter-style text animation.
+
+```text
+src/features/typewriterEffect/
+├── components/
+├── hooks/
+├── types/
+└── index.ts
+```
+
+Keeping this interaction isolated makes the effect reusable instead of coupling it directly to the hero section.
+
+### ❄️ Particle Background
+
+An independent particles feature creates the animated visual background used by the portfolio.
+
+```text
+src/features/particlesBackground/
+├── components/
+├── hooks/
+└── index.ts
+```
+
+The implementation is backed by `@tsparticles/react`, `@tsparticles/engine`, and the Snow preset.
+
+### 🧠 Skills Showcase
+
+The skills section is data-driven and divides technologies into categories:
+
+- **Frontend**
+- **Tools**
+
+The current skills data includes technologies such as JavaScript, TypeScript, React, Next.js, React Query, React Router, Leaflet, Three.js, GSAP, Axios, Formik, Socket.IO, Tailwind CSS, shadcn/ui, MUI, Sass, DaisyUI, Git, GitHub, npm, pnpm, Vite, and ESLint.
+
+Skills are rendered through reusable cards and category components instead of hardcoded markup in the main section.
+
+### 🧩 Portfolio Slider
+
+The portfolio section uses a dedicated slider module with Embla Carousel.
+
+The project data is separated from the UI and currently defines **four project slides**, each with a title, description, image, technologies, and link target.
+
+This architecture makes it straightforward to replace the placeholder project data with real projects later without rebuilding the section UI.
+
+### 📄 Resume Download
+
+A reusable `DownloadResumeButton` component is included and can be rendered as a fixed action, giving visitors persistent access to the resume throughout the page.
+
+### 🧩 Reusable UI Architecture
+
+The project contains a small UI system built on Radix primitives and reusable components such as:
+
+- Button
+- Badge
+- Card
+- Carousel
+- Form
+- Input
+- Label
+- Navigation Menu
+- Separator
+- Sheet
+- Textarea
+
+This gives the larger page sections a consistent component layer instead of duplicating low-level markup.
+
+## 🏗️ Architecture
+
+The project follows a **feature-oriented + component-oriented** architecture.
+
+### `components/`
+
+Contains shared presentation components and page templates.
+
+```text
+components/
+├── templates/
+│   ├── aboutMeSection/
+│   ├── contactSection/
+│   ├── introSection/
+│   ├── menu/
+│   ├── portfolioSection/
+│   └── skillsSection/
+│
+├── ui/
+├── DownloadResumeButton.tsx
+├── SectionHeader.tsx
+└── ThemeModeToggle.tsx
+```
+
+The `templates` directory contains larger page sections, while `ui` contains reusable building blocks.
+
+### `features/`
+
+Contains self-contained interactive features.
+
+```text
+features/
+├── particlesBackground/
+└── typewriterEffect/
+```
+
+Each feature owns its related components, hooks, types, and entry point where necessary.
+
+### `hooks/`
+
+Contains reusable application hooks.
+
+```text
+hooks/
+├── useFadeInOnScrollAnimation.ts
+└── useTheme.ts
+```
+
+The animation hook encapsulates GSAP-based reveal behavior, while the theme hook applies the persisted theme to the document.
+
+### `lib/`
+
+Contains shared infrastructure and utility functions.
+
+```text
+lib/
+├── gsap.ts
+└── utils.ts
+```
+
+The GSAP module centralizes plugin registration and exports the animation primitives used throughout the application.
+
+### `stores/`
+
+Contains global client-side state.
+
+```text
+stores/
+└── useThemeStore.ts
+```
+
+The theme store uses Zustand's `persist` middleware with the `ui-theme` local-storage key.
+
+### `types/`
+
+Contains shared TypeScript types used across the application.
+
+```text
+types/
+└── index.ts
+```
+
+Section-specific types are additionally colocated with their related feature/template modules.
+
+## 🎬 Animation System
+
+Animation is treated as a reusable part of the architecture rather than being embedded directly into every component.
+
+### Global GSAP Setup
+
+```ts
+ScrollTrigger;
+ScrollSmoother;
+TextPlugin;
+SplitText;
+useGSAP;
+```
+
+All required GSAP plugins are registered in a single module:
+
+```text
+src/lib/gsap.ts
+```
+
+### Scroll Reveal Hook
+
+Sections can use:
+
+```ts
+useFadeInOnScrollAnimation();
+```
+
+to get a ref that triggers a configurable fade/translate entrance animation through `ScrollTrigger`.
+
+### Reduced Motion Support
+
+The main smoother checks the user's `prefers-reduced-motion` setting before creating the ScrollSmoother instance, providing a more accessible fallback for users who prefer less motion.
+
+## 🎨 Styling
+
+The project uses **Tailwind CSS 4** as its primary styling system, with custom CSS files for global and project-specific rules.
+
+```text
+src/
+├── custom.css
+└── index.css
+```
+
+The UI is built with reusable utility-driven components rather than page-wide monolithic CSS.
+
+## 📂 Project Structure
+
+```text
+Portfolio/
+│
+├── public/
+│   ├── contact-icons/
+│   ├── font/
+│   ├── particles-images/
+│   ├── tech-icons/
+│   ├── portfolio-favicon.png
+│   ├── robots.txt
+│   └── sitemap.xml
+│
+├── src/
+│   ├── components/
+│   │   ├── templates/
+│   │   │   ├── aboutMeSection/
+│   │   │   ├── contactSection/
+│   │   │   ├── introSection/
+│   │   │   ├── menu/
+│   │   │   ├── portfolioSection/
+│   │   │   └── skillsSection/
+│   │   └── ui/
+│   │
+│   ├── features/
+│   │   ├── particlesBackground/
+│   │   └── typewriterEffect/
+│   │
+│   ├── hooks/
+│   │   ├── useFadeInOnScrollAnimation.ts
+│   │   └── useTheme.ts
+│   │
+│   ├── lib/
+│   │   ├── gsap.ts
+│   │   └── utils.ts
+│   │
+│   ├── stores/
+│   │   └── useThemeStore.ts
+│   │
+│   ├── types/
+│   │   └── index.ts
+│   │
+│   ├── App.tsx
+│   ├── Layout.tsx
+│   ├── custom.css
+│   ├── index.css
+│   ├── main.tsx
+│   └── vite-env.d.ts
+│
+├── .gitignore
+├── bun.lock
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+## ⚙️ Scripts & Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Because the Vite script is configured with `--host`, the development server can be exposed to the local network for device testing.
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Run ESLint:
+
+```bash
+npm run lint
+```
+
+## 🔍 SEO & Web Metadata
+
+The project includes a basic production-oriented document setup in `index.html`:
+
+- Persian language declaration
+- RTL direction
+- Responsive viewport configuration
+- Custom favicon
+- Meta description
+- Portfolio page title
+- `robots.txt`
+- `sitemap.xml`
+
+The current page metadata identifies the site as **Ali BoorBoor Portfolio** and describes it as a frontend developer portfolio focused on React, TypeScript, and modern web development.
+
+## 📝 Project Notes
+
+### Client-Side Application
+
+This repository is a Vite + React client application. There is no application server, database layer, or API implementation in the repository.
+
+### Theme Persistence
+
+Theme selection is persisted locally using Zustand, which means it is a client-side preference rather than a server-stored account setting.
+
+### Accessibility-Aware Motion
+
+The global smooth-scroll layer checks `prefers-reduced-motion`, which prevents ScrollSmoother from being initialized when reduced motion is requested.
+
+## 🌐 Deployment
+
+The portfolio is deployed with **Vercel**.
+
+**Live:** https://portfolio-three-chi-l541bxyevl.vercel.app/
+
+**Repository:** https://github.com/Ali-boorboor/Portfolio
+
+Vercel can build the project directly from the repository using the standard Vite production command:
+
+```bash
+npm run build
+```
+
+## 🎯 Project Highlights
+
+This portfolio demonstrates a number of modern frontend development concepts:
+
+- React 19 + TypeScript architecture
+- Vite-based development and production builds
+- Feature-oriented project organization
+- Reusable UI primitives
+- Radix-based accessible components
+- Tailwind CSS 4 styling
+- Zustand state management
+- Persistent light/dark theme
+- GSAP animation system
+- ScrollTrigger-powered reveal animations
+- ScrollSmoother integration
+- Reduced-motion handling
+- Typewriter effect feature module
+- tsParticles animated background
+- Embla-powered project slider
+- React Hook Form + Zod validation
+- Responsive RTL / Persian-first interface
+- Resume download action
+- SEO-oriented document metadata
+- Vercel deployment
+
+## 👨‍💻 Author
+
+Made with 💙 and plenty of frontend experimentation by **Ali BoorBoor**.
+
+**Repository:** [github.com/Ali-boorboor/Portfolio](https://github.com/Ali-boorboor/Portfolio)
+
+**Live Portfolio:** [portfolio-three-chi-l541bxyevl.vercel.app](https://portfolio-three-chi-l541bxyevl.vercel.app/)
+
+---
+
+⭐ If you found the project useful or interesting, consider giving the repository a star.
