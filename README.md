@@ -179,90 +179,6 @@ The project contains a small UI system built on Radix primitives and reusable co
 
 This gives the larger page sections a consistent component layer instead of duplicating low-level markup.
 
-## 🏗️ Architecture
-
-The project follows a **feature-oriented + component-oriented** architecture.
-
-### `components/`
-
-Contains shared presentation components and page templates.
-
-```text
-components/
-├── templates/
-│   ├── aboutMeSection/
-│   ├── contactSection/
-│   ├── introSection/
-│   ├── menu/
-│   ├── portfolioSection/
-│   └── skillsSection/
-│
-├── ui/
-├── DownloadResumeButton.tsx
-├── SectionHeader.tsx
-└── ThemeModeToggle.tsx
-```
-
-The `templates` directory contains larger page sections, while `ui` contains reusable building blocks.
-
-### `features/`
-
-Contains self-contained interactive features.
-
-```text
-features/
-├── particlesBackground/
-└── typewriterEffect/
-```
-
-Each feature owns its related components, hooks, types, and entry point where necessary.
-
-### `hooks/`
-
-Contains reusable application hooks.
-
-```text
-hooks/
-├── useFadeInOnScrollAnimation.ts
-└── useTheme.ts
-```
-
-The animation hook encapsulates GSAP-based reveal behavior, while the theme hook applies the persisted theme to the document.
-
-### `lib/`
-
-Contains shared infrastructure and utility functions.
-
-```text
-lib/
-├── gsap.ts
-└── utils.ts
-```
-
-The GSAP module centralizes plugin registration and exports the animation primitives used throughout the application.
-
-### `stores/`
-
-Contains global client-side state.
-
-```text
-stores/
-└── useThemeStore.ts
-```
-
-The theme store uses Zustand's `persist` middleware with the `ui-theme` local-storage key.
-
-### `types/`
-
-Contains shared TypeScript types used across the application.
-
-```text
-types/
-└── index.ts
-```
-
-Section-specific types are additionally colocated with their related feature/template modules.
-
 ## 🎬 Animation System
 
 Animation is treated as a reusable part of the architecture rather than being embedded directly into every component.
@@ -302,6 +218,8 @@ to get a ref that triggers a configurable fade/translate entrance animation thro
 ![Skills](public/readme-images/skills.png)
 
 ## 📂 Project Structure
+
+The project follows a **feature-oriented + component-oriented** architecture.
 
 ```text
 Portfolio/
