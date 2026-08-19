@@ -293,6 +293,14 @@ useFadeInOnScrollAnimation();
 
 to get a ref that triggers a configurable fade/translate entrance animation through `ScrollTrigger`.
 
+## 📸 Preview
+
+![Intro](public/readme-images/intro.png)
+
+![About](public/readme-images/about.png)
+
+![Skills](public/readme-images/skills.png)
+
 ## 📂 Project Structure
 
 ```text
