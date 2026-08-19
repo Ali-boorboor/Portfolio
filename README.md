@@ -293,22 +293,6 @@ useFadeInOnScrollAnimation();
 
 to get a ref that triggers a configurable fade/translate entrance animation through `ScrollTrigger`.
 
-### Reduced Motion Support
-
-The main smoother checks the user's `prefers-reduced-motion` setting before creating the ScrollSmoother instance, providing a more accessible fallback for users who prefer less motion.
-
-## 🎨 Styling
-
-The project uses **Tailwind CSS 4** as its primary styling system, with custom CSS files for global and project-specific rules.
-
-```text
-src/
-├── custom.css
-└── index.css
-```
-
-The UI is built with reusable utility-driven components rather than page-wide monolithic CSS.
-
 ## 📂 Project Structure
 
 ```text
@@ -420,20 +404,6 @@ The project includes a basic production-oriented document setup in `index.html`:
 
 The current page metadata identifies the site as **Ali BoorBoor Portfolio** and describes it as a frontend developer portfolio focused on React, TypeScript, and modern web development.
 
-## 📝 Project Notes
-
-### Client-Side Application
-
-This repository is a Vite + React client application. There is no application server, database layer, or API implementation in the repository.
-
-### Theme Persistence
-
-Theme selection is persisted locally using Zustand, which means it is a client-side preference rather than a server-stored account setting.
-
-### Accessibility-Aware Motion
-
-The global smooth-scroll layer checks `prefers-reduced-motion`, which prevents ScrollSmoother from being initialized when reduced motion is requested.
-
 ## 🌐 Deployment
 
 The portfolio is deployed with **Vercel**.
@@ -441,37 +411,6 @@ The portfolio is deployed with **Vercel**.
 **Live:** https://portfolio-three-chi-l541bxyevl.vercel.app/
 
 **Repository:** https://github.com/Ali-boorboor/Portfolio
-
-Vercel can build the project directly from the repository using the standard Vite production command:
-
-```bash
-npm run build
-```
-
-## 🎯 Project Highlights
-
-This portfolio demonstrates a number of modern frontend development concepts:
-
-- React 19 + TypeScript architecture
-- Vite-based development and production builds
-- Feature-oriented project organization
-- Reusable UI primitives
-- Radix-based accessible components
-- Tailwind CSS 4 styling
-- Zustand state management
-- Persistent light/dark theme
-- GSAP animation system
-- ScrollTrigger-powered reveal animations
-- ScrollSmoother integration
-- Reduced-motion handling
-- Typewriter effect feature module
-- tsParticles animated background
-- Embla-powered project slider
-- React Hook Form + Zod validation
-- Responsive RTL / Persian-first interface
-- Resume download action
-- SEO-oriented document metadata
-- Vercel deployment
 
 ## 👨‍💻 Author
 
